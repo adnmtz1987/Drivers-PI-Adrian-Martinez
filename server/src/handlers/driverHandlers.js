@@ -3,8 +3,6 @@ const getDrivers = require('../controllers/getDrivers');
 const getDriversById = require('../controllers/getDriversById');
 const getDriverByName = require('../controllers/getDriversByName');
 
-//handler DRIVER
-
 const handlerGetDrivers = async (req, res) => {
     try {
         const response = await getDrivers();
@@ -16,7 +14,6 @@ const handlerGetDrivers = async (req, res) => {
     }
 }
 
-//handler ByID
 const handlerGetDriversById = async (req, res) => {
     try {
         const { id } =req.params;
@@ -28,8 +25,6 @@ const handlerGetDriversById = async (req, res) => {
     }
 }
 
-//handler BYNAME
-
 const handlerGetDriverByName = async(req, res) => {
     try {
         const name = req.query.name.toLowerCase();
@@ -40,8 +35,6 @@ const handlerGetDriverByName = async(req, res) => {
         return res.status(500).send('Cant get drivers by name!.')
     }
 }
-
-//handler CREATE
 
 const handlerCreateDrivers = async(req, res) => {
     try {
